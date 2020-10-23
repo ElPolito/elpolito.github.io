@@ -1,0 +1,70 @@
+.comp-cursus
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  .cursus-event
+    width: 100%
+    margin: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    &:nth-child(odd)
+      flex-direction: row
+      .infos
+        text-align: right
+      .date
+        text-align: left
+    &:nth-child(even)
+      flex-direction: row-reverse
+      .infos
+        text-align: left
+        .label
+          .more
+            right: auto
+            left: 20px
+      .date
+        text-align: right
+
+    .icon
+      margin: 50px
+      flex-shrink: 0
+    .infos
+      width: calc(50% - 33px)
+      flex-shrink: 100
+      margin-bottom: 20px
+      .label
+        padding: 20px 20px 40px 20px
+        position: relative
+        box-shadow: 0 0 2px 0 $col-main
+        border-radius: 5px
+        transition: box-shadow 0.3s
+        display: inline-block
+        &:hover
+          box-shadow: 0 0 5px $col-main
+        .more
+          position: absolute
+          bottom: 10px
+          right: 20px
+          font-family: LatoBold
+          font-size: 0.9rem
+          &:hover
+            cursor: pointer
+            .border
+              width: 100%
+          .border
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 0
+            height: 1px
+            background: black
+            transition: width 0.3s
+
+    .date
+      width: calc(50% - 133px)
+      flex-shrink: 100
+
+.comp-cursus-line
+  width: 5px
+  position: absolute
+  z-index: -1
