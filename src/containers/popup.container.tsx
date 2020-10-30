@@ -40,7 +40,7 @@ export default class PopupContainer extends BaseComponent<{}, IState> {
           <div className='popup-back' onClick={this.clearPopups}>
             {this.state.popups.map((popup: Popup) => (
               <div key={popup.id}>
-                <popup.component />
+                <popup.component popupId={popup.id} />
               </div>
             ))}
           </div>

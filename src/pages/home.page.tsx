@@ -4,6 +4,12 @@ import CursusComponent from '../components/cursus.component';
 import DiamondComponent from '../components/diamond.component';
 import MarginComponent from '../components/layouts/margin.component';
 import React from 'react';
+import LinkComponent from '../components/link.component';
+import LanguageComponent from '../components/language.component';
+import ContactComponent from '../components/contact.component';
+import ProfileComponent from '../components/profile.component';
+import InterestComponent from '../components/interest.component';
+import RevealLetterEffectComponent from '../components/reveallettereffect.component';
 
 class DoubleBars extends BaseComponent {
   public render = () => {
@@ -29,13 +35,17 @@ export default class HomePage extends BaseComponent {
               </CenterComponent>
             </DiamondComponent>
             <MarginComponent top='100px'>
-              <h1 className='main-title'>Paul Moine</h1>
+              <h1 className='main-title'><RevealLetterEffectComponent text="Paul Moine" /></h1>
             </MarginComponent>
           </CenterComponent>
         </div>
-        <div className='timeline-panel'>
-          <CursusComponent />
-        </div>
+        <ProfileComponent />
+        <CursusComponent />
+        <InterestComponent />
+        <LanguageComponent />
+        <LinkComponent />
+        <ContactComponent />
+        <footer></footer>
       </>
     );
   };

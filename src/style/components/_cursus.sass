@@ -4,7 +4,7 @@
   flex-wrap: wrap
   .cursus-event
     width: 100%
-    margin: 20px
+    margin: 20px 100px
     display: flex
     align-items: center
     justify-content: center
@@ -12,26 +12,36 @@
       flex-direction: row
       .infos
         text-align: right
+        transform: translateX(-100px)
       .date
         text-align: left
+        transform: translateX(100px)
     &:nth-child(even)
       flex-direction: row-reverse
       .infos
         text-align: left
+        transform: translateX(100px)
         .label
           .more
             right: auto
             left: 20px
       .date
         text-align: right
+        transform: translateX(-100px)
 
     .icon
       margin: 50px
       flex-shrink: 0
+      img
+        transform: rotate(180deg)
+        opacity: 0
+        transition: transform 1s, opacity 1s
     .infos
       width: calc(50% - 33px)
       flex-shrink: 100
       margin-bottom: 20px
+      opacity: 0
+      transition: opacity 2s, transform 2s
       .label
         padding: 20px 20px 40px 20px
         position: relative
@@ -63,6 +73,19 @@
     .date
       width: calc(50% - 133px)
       flex-shrink: 100
+      opacity: 0
+      transition: opacity 2s, transform 2s
+
+    &.revealed 
+      .infos
+        transform: translateX(0)
+        opacity: 1
+      .date
+        transform: translateX(0)
+        opacity: 1
+      .icon img
+        transform: rotate(0)
+        opacity: 1
 
 .comp-cursus-line
   width: 5px

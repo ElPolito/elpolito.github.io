@@ -47,6 +47,10 @@ const config = {
                     },
                 }, ],
             },
+            {
+                test: /.md$/,
+                use: ['raw-loader']
+            }
         ],
     },
     plugins: [
