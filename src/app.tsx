@@ -1,12 +1,11 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import AppController from './controllers/app.controller';
 import BaseComponent from './components/base.component';
 import PopupContainer from './containers/popup.container';
 import React from 'react';
 import pages from './pages';
 
-function Page(props) {
+// tslint:disable-next-line: function-name
+function Page(props: any) {
   return <div className={`page ${props.pageName}`}>{props.children}</div>;
 }
 
@@ -22,15 +21,9 @@ export default class App extends BaseComponent {
     return (
       <div>
         <PopupContainer>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/'>
-                <Page pageName='home'>
-                  <pages.Home />
-                </Page>
-              </Route>
-            </Switch>
-          </BrowserRouter>
+          <Page pageName='home'>
+            <pages.Home />
+          </Page>
         </PopupContainer>
       </div>
     );

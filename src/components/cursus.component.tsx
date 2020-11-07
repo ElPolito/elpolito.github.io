@@ -1,28 +1,60 @@
+import * as data from '../data/data';
+
+import ApparitionEffectComponent from './apparitioneffect.component';
 import BaseComponent from './base.component';
 import CenterComponent from './layouts/center.component';
 import CursusController from '../controllers/components/cursus.controller';
 import CursusPopup from './popups/cursus.popup';
 import DiamondComponent from './diamond.component';
+import { ICursus } from '../data/cursus/cursus';
 import PopupContainer from '../containers/popup.container';
 import React from 'react';
-import cursus from '../data/cursus';
 import iconsService from '../services/icons.service';
-import ApparitionEffectComponent from './apparitioneffect.component';
 
-class RenderEvent extends BaseComponent {
+const cursus = data.getCursus();
+const globalTrans = data.getGlobalTranslations();
 
-  constructor(props: any) {
+interface IEventProps {
+  event: ICursus;
+  reference: React.RefObject<any>;
+}
+
+class RenderEvent extends BaseComponent<IEventProps> {
+  constructor(props: IEventProps) {
     super(props);
     this.useRevealEffect(props.reference);
     this.state = {
       revealed: false,
-    }
+    };
   }
 
   public render = () => {
+    let date = '';
+    const fromSplitted = this.props.event.date.from.split('-');
+    const fromMonth = fromSplitted.length > 1 ? parseInt(fromSplitted[0], 10) : 0;
+    if (fromMonth) {
+      date += `${globalTrans.months[fromMonth]} `;
+    }
+    const fromYear = fromSplitted.length > 1 ? parseInt(fromSplitted[1], 10) : parseInt(this.props.event.date.from, 10);
+    date += fromYear;
+    if (this.props.event.date.to) {
+      if (this.props.event.date.to !== this.props.event.date.from) {
+        date += ' - ';
+        const toSplitted = this.props.event.date.to.split('-');
+        const toMonth = toSplitted.length > 1 ? parseInt(toSplitted[0], 10) : 0;
+        if (toMonth) {
+          date += `${globalTrans.months[toMonth]} `;
+        }
+        const toYear = toSplitted.length > 1 ? parseInt(toSplitted[1], 10) : parseInt(this.props.event.date.to, 10);
+        date += toYear;
+      }
+    } else {
+      date += ' - Maintenant';
+    }
+
     return (
-      <div ref={this.props.reference} className={`cursus-event ${this.state.revealed ? "revealed" : ""}`}>
-        <div className="infos">
+      <div ref={this.props.reference} className={`cursus-event ${this.state.revealed ? 'revealed' : ''}`}>
+        <div className='infos'>
           <div className='label'>
             <span>{this.props.event.label.fr}</span>
             <a className='more' onClick={this.onClickMore}>
@@ -38,9 +70,7 @@ class RenderEvent extends BaseComponent {
             </CenterComponent>
           </DiamondComponent>
         </div>
-        <div className='date'>
-          {this.props.event.date.from} - {this.props.event.date.to}
-        </div>
+        <div className='date'>{date}</div>
       </div>
     );
   };
@@ -68,7 +98,7 @@ export default class CursusComponent extends BaseComponent {
     return (
       <>
         <ApparitionEffectComponent effect={['fade']}>
-          <h2 className="section-title">Parcours</h2>
+          <h2 className='section-title'>Parcours</h2>
         </ApparitionEffectComponent>
         <div className='comp-cursus'>
           {cursus.map((event, index) => {
@@ -96,14 +126,14 @@ export default class CursusComponent extends BaseComponent {
         const width = Math.abs(nextDiamond.offsetLeft - currentDiamond.offsetLeft);
         svg.classList.add('comp-cursus-line');
 
-        svg.style.height = height + 'px';
-        svg.style.width = width + 'px';
+        svg.style.height = `${height}px`;
+        svg.style.width = `${width}px`;
 
-        svg.style.top = currentDiamond.offsetTop + currentDiamond.offsetHeight / 2 + 'px';
+        svg.style.top = `${currentDiamond.offsetTop + currentDiamond.offsetHeight / 2}px`;
         if (i % 2 === 0) {
-          svg.style.left = currentDiamond.offsetLeft + currentDiamond.offsetWidth / 2 - width + 'px';
+          svg.style.left = `${currentDiamond.offsetLeft + currentDiamond.offsetWidth / 2 - width}px`;
         } else {
-          svg.style.left = currentDiamond.offsetLeft + currentDiamond.offsetWidth / 2 + 'px';
+          svg.style.left = `${currentDiamond.offsetLeft + currentDiamond.offsetWidth / 2}px`;
         }
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');

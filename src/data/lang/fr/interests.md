@@ -2,8 +2,11 @@
 
 **Musique** - écoutes personnelles, et concerts
 
-**Modélisation 3D** - réalisation de différents modèles sur Blender 
+**Modélisation 3D** - réalisation de différents modèles sur Blender
 
-**Séries**
+**Séries** - Pour ne pas citer les plus connues :
+
+- _How to get away with murder_
+- _Orphan black_
 
 **Jeux vidéo**

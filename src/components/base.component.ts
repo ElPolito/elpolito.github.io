@@ -65,7 +65,9 @@ class BaseComponent<T = any, U = any> extends React.Component<T, U> {
     });
   };
 
-  protected onReveal = () => { };
+  protected onReveal = () => {
+    // Do nothing here
+  };
 
   private onRevealCallback: IntersectionObserverCallback = (entries, observer) => {
     if (entries.length) {
