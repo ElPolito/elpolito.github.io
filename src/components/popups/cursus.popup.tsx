@@ -60,7 +60,7 @@ class CursusPopup extends BaseComponent<IProps> {
           </a>
           <span>{date}</span>
         </div>
-        <ReactMarkdown>{this.props.data.details}</ReactMarkdown>
+        <ReactMarkdown className='markdown'>{this.props.data.details}</ReactMarkdown>
       </div>
     );
   };

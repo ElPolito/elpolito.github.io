@@ -113,6 +113,7 @@ export default class CursusComponent extends BaseComponent {
 
   public componentDidMount = () => {
     setTimeout(() => {
+      if (window.innerWidth <= 1000) return;
       for (let i = 0; i < this.domReferences.length - 1; i += 1) {
         const ref = this.domReferences[i];
         const nextRef = this.domReferences[i + 1];
