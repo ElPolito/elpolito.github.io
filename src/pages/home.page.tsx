@@ -3,6 +3,7 @@ import CenterComponent from '../components/layouts/center.component';
 import ContactComponent from '../components/contact.component';
 import CursusComponent from '../components/cursus.component';
 import DiamondComponent from '../components/diamond.component';
+import DownloadComponent from '../components/download.component';
 import InterestComponent from '../components/interest.component';
 import LanguageComponent from '../components/language.component';
 import LinkComponent from '../components/link.component';
@@ -47,6 +48,7 @@ export default class HomePage extends BaseComponent {
         <LanguageComponent />
         <LinkComponent />
         <ContactComponent />
+        <DownloadComponent />
         <footer></footer>
       </>
     );
