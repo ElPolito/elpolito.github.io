@@ -5,6 +5,7 @@ import PopupContainer, { PopupProps } from '../../containers/popup.container';
 import BaseComponent from '../base.component';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkVideo from 'gatsby-remark-video';
 
 const globalTrans = data.getGlobalTranslations();
 

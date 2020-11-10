@@ -1,10 +1,14 @@
 import axopenDetails from './cursus-details/axopen.md';
 import bacDetails from './cursus-details/bac.md';
+import bulletfireDetails from './cursus-details/bulletfire.md';
 import dutDetails from './cursus-details/dut.md';
 import easylifeCDDDetails from './cursus-details/easylife.cdd.md';
 import easylifeStageDetails from './cursus-details/easylife.stage.md';
 import ewaDetails from './cursus-details/ewa.md';
 import insaDetails from './cursus-details/insa.md';
+import spacyDetails from './cursus-details/spacy.md';
+import upProximityDetails from './cursus-details/up-proximity.md';
+import yukkyLauncherDetails from './cursus-details/yukky.launcher.md';
 
 export interface ICursus {
   date: {
@@ -15,7 +19,7 @@ export interface ICursus {
     fr: string;
     en: string;
   };
-  type: 'diploma' | 'internship' | 'job';
+  type: 'diploma' | 'internship' | 'job' | 'personalproject' | 'schoolproject';
   details: string;
   keywords: string[];
   logo: string;
@@ -125,6 +129,65 @@ const cursus: ICursus[] = [
     details: ewaDetails,
     logo: 'etic.png',
     link: 'https://www.etic-insa.com/',
+  },
+  {
+    date: {
+      from: '2019',
+      to: '2019',
+    },
+    label: {
+      fr: 'Réédition du jeu mobile Up Proximity disponible sur le PlayStore',
+      en: '',
+    },
+    type: 'personalproject',
+    keywords: ['Unity Engine', 'Game development', 'C#', 'Android', 'PlayStore'],
+    details: upProximityDetails,
+    logo: 'asteroid.svg',
+    link: 'https://smallprodgame.com',
+  },
+  {
+    date: {
+      from: '10-2017',
+      to: '2-2018',
+    },
+    label: {
+      fr: "Développement d'un jeu mobile de type space shooter",
+      en: '',
+    },
+    type: 'personalproject',
+    keywords: ['Unity Engine', 'Game development', 'C#', 'Android', 'PlayStore', 'Multiplayer'],
+    details: spacyDetails,
+    logo: 'spacy.png',
+    link: 'https://smallprodgame.com',
+  },
+  {
+    date: {
+      from: '03-2018',
+      to: '03-2019',
+    },
+    label: {
+      fr: "Projet tutoré réalisé avec l'IUT. Développement d'un jeu avec Unity Engine",
+      en: '',
+    },
+    type: 'schoolproject',
+    keywords: [],
+    details: bulletfireDetails,
+    logo: 'logoBF.png',
+    link: '',
+  },
+  {
+    date: {
+      from: '08-2019',
+    },
+    label: {
+      fr: "Développement d'un système de launcher pour les développeurs de jeux vidéo",
+      en: '',
+    },
+    type: 'personalproject',
+    keywords: [],
+    details: yukkyLauncherDetails,
+    logo: 'yukky-logo.png',
+    link: 'https://launcher.yukkyapp.com',
   },
 ];
 

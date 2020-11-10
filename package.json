@@ -44,5 +44,8 @@
         "uuid": "^8.3.1",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12"
+    },
+    "dependencies": {
+        "gatsby-remark-video": "^1.2.5"
     }
 }
