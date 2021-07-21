@@ -39,6 +39,7 @@ export default class PopupContainer extends BaseComponent<{}, IState> {
     super(props);
     PopupContainer.instance = this;
     this.state = {
+      ...this.state,
       popups: [],
       visible: false,
     };

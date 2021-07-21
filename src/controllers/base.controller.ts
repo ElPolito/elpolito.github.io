@@ -29,9 +29,9 @@ class BaseController {
 
   public changeState() {
     if (this.render.isMount) {
-      this.render.setState(this.state);
+      this.render.setState({ ...this.render.state, ...this.state });
     } else {
-      this.render.state = this.state;
+      this.render.state = { ...this.render.state, ...this.state };
     }
   }
 

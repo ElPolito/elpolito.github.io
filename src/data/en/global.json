@@ -1,0 +1,50 @@
+{
+    "months": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+    },
+    "profile": {
+        "title": "Profile"
+    },
+    "cursus": {
+        "title": "Cursus",
+        "more_infos": "More information",
+        "now": "Today"
+    },
+    "interests": {
+        "title": "Interests"
+    },
+    "languages": {
+        "title": "Languages",
+        "french": "French",
+        "english": "English",
+        "italian": "Italian",
+        "spanish": "Spanish",
+        "levels": {
+            "native": "Native",
+            "pro": "Advanced",
+            "beginner": "Beginner"
+        }
+    },
+    "links": {
+        "title": "Links"
+    },
+    "contact": {
+        "title": "Contact"
+    },
+    "downloads": {
+        "title": "Downloads",
+        "english": "English resume",
+        "french": "French resume"
+    }
+}

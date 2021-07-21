@@ -1,7 +1,9 @@
 import AppController from './controllers/app.controller';
 import BaseComponent from './components/base.component';
+import LangSelector from './components/langselector.component';
 import PopupContainer from './containers/popup.container';
 import React from 'react';
+import SVGContainer from './containers/svg.container';
 import pages from './pages';
 
 // tslint:disable-next-line: function-name
@@ -21,9 +23,12 @@ export default class App extends BaseComponent {
     return (
       <div>
         <PopupContainer>
-          <Page pageName='home'>
-            <pages.Home />
-          </Page>
+          <SVGContainer>
+            <LangSelector />
+            <Page pageName='home'>
+              <pages.Home />
+            </Page>
+          </SVGContainer>
         </PopupContainer>
       </div>
     );

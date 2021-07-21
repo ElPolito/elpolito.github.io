@@ -1,0 +1,46 @@
+.lang-selector
+  position: fixed
+  top: 20px
+  right: 20px
+  z-index: 100
+  .cur-lang
+    box-shadow: 0 0 5px 0 $col-main
+    border-radius: 50%
+    padding: 5px
+    .lang
+      transform: rotate(0)
+  .other-langs
+    box-shadow: 0 0 5px 0 $col-main
+    border-radius: 25px
+    margin-top: 5px
+    height: 0
+    padding: 0 5px 0 5px
+    overflow: hidden
+    opacity: 0
+    transition: all 0.3s
+  .lang
+    background: white
+    border-radius: 50%
+    height: auto
+    width: 40px
+    height: 40px
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 5px
+    transform: rotate(180deg)
+    transition: transform 0.3s
+    cursor: pointer
+    &:last-child
+      margin-bottom: 0
+    img
+      height: 40px
+      border-radius: 5px
+  &:hover
+    .other-langs
+      height: 40px
+      padding: 5px
+      opacity: 1
+      .lang
+        transform: rotate(0)

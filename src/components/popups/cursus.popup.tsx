@@ -1,13 +1,8 @@
-import * as data from '../../data/data';
-
 import PopupContainer, { PopupProps } from '../../containers/popup.container';
 
 import BaseComponent from '../base.component';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkVideo from 'gatsby-remark-video';
-
-const globalTrans = data.getGlobalTranslations();
 
 interface PropsData {
   data: any;
@@ -21,9 +16,11 @@ class CursusPopup extends BaseComponent<IProps> {
   constructor(props: IProps) {
     super(props);
     this.compRef = React.createRef();
+    this.useLang();
   }
 
   public render = () => {
+    const globalTrans = this.state.lang.data.global;
     let date = '';
     const fromSplitted = this.props.data.date.from.split('-');
     const fromMonth = fromSplitted.length > 1 ? parseInt(fromSplitted[0], 10) : 0;
